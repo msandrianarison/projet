@@ -11,8 +11,8 @@ Emuler un lecteur mp3 sur le microcontrôleur STM32F746G : pouvoir écouter de l
 
 ## Difficultés du projet 
 Contrairement aux fichiers .wav, les fichiers mp3 ont subi une compression, ce qui diminuent leurs tailles de fichiers, mais rend leurs lectures plus difficiles car on doit le décoder avant de le lire.
-La bibliothèque X-CUBE-AUDIO fournit des fonctions pour décoder les données du fichier mp3 et pour gérer la lecture. L'acquisition des données peut-être résumer de la façon suivante :
-- Initialisation des paramètres : fréquence, nombre de canals
+La bibliothèque X-CUBE-AUDIO fournit des fonctions (dans le fichier mp3process.c) pour décoder les données du fichier mp3 et pour gérer la lecture. L'acquisition des données peut-être résumé de la façon suivante :
+- Initialisation des paramètres : fréquence d'échantillonnage, nombre de canaux et le débit binaire 
 - Lecture des en-têtes
 - Décodage des trames MP3 
 - Détection du format de débit binaire variable (VBR)
