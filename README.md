@@ -10,3 +10,16 @@ Emuler un lecteur mp3 sur le microcontrôleur STM32F746G : pouvoir écouter de l
 - Fusion du dossier dans le workspace avec le dossier dans ce dépôt (la version zip ne pouvant pas être importée sous format ac6, le projet ne sera pas bien converti par l'IDE sinon).
 
 ## Difficultés du projet 
+Contrairement aux fichiers .wav, les fichiers mp3 ont subi une compression, ce qui diminuent leurs tailles de fichiers, mais rend leurs lectures plus difficiles car on doit le décoder avant de le lire.
+La bibliothèque X-CUBE-AUDIO fournit des fonctions pour décoder les données du fichier mp3 et pour gérer la lecture. L'acquisition des données peut-être résumer de la façon suivante :
+- Initialisation des paramètres : fréquence, nombre de canals
+- Lecture des en-têtes
+- Décodage des trames MP3 
+- Détection du format de débit binaire variable (VBR)
+- Calcul de la durée totale du flux
+- Envoie des données PCM en sortie (format Pulse-code modulation)
+
+## Amélioration possible
+- Ajout d'un mode aléatoire
+- Ajout d'une touche avance rapide / recul rapide
+- Changement de la touche pause/play comme
