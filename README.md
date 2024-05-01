@@ -3,13 +3,13 @@
 Le dépôt est accessible à l'adresse : https://github.com/msandrianarison/projet
 
 ## Objectif du projet : 
-Emuler un lecteur mp3 sur le microcontrôleur STM32F746G : pouvoir écouter de la musique mp3 avec des écouteurs et avoir les contrôles basiques de n'importe quel baladeur mp3 : pause, stop, changement de musique, affichage du titre et contrôle du volume sonore.
+Émuler un lecteur mp3 sur le microcontrôleur STM32F746G : pouvoir écouter de la musique mp3 avec des écouteurs et avoir les contrôles basiques de n'importe quel baladeur mp3 : pause, stop, changement de musique, affichage du titre et contrôle du volume sonore.
 
 ## Pré-requis
-- Télechargement de la librairie X-CUBE-AUDIO sur le site de st https://www.st.com/en/embedded-software/x-cube-audio.html
+- Téléchargement de la librairie X-CUBE-AUDIO sur le site de st https://www.st.com/en/embedded-software/x-cube-audio.html . C'est une librairie développée par ST pour les microcontrôleurs des séries  STM32F4 et STM32F7.
 - Téléchargement de la version corrigée du MP3Player sur https://github.com/aroyer-qc/MP3-STM32F746G-DISCO.git
 - Importation du projet MP3Player pour la carte STM32F7xx : Import -> General -> Import ac6 System Workbench for STM32 Project ->  Sélectionner le projet "MP3-STM32F746G-DISCO"
-- Fusion du dossier dans le workspace avec le dossier dans ce dépôt (la version zip ne pouvant pas être importée sous format ac6, le projet ne sera pas bien converti par l'IDE sinon).
+- Fusion du dossier dans le workspace avec le dossier dans ce dépôt (la version zip du projet ne peut pas être importée sous format ac6, le projet ne sera pas bien converti par l'IDE sinon).
 
 ## Difficultés du projet 
 Contrairement aux fichiers .wav, les fichiers mp3 ont subi une compression avec pertes, ce qui diminuent leurs tailles de fichiers, mais rend leurs lectures plus difficiles car on doit les décoder avant de les lire.
@@ -21,7 +21,7 @@ La bibliothèque X-CUBE-AUDIO fournit des fonctions (dans le fichier mp3process.
 - Calcul de la durée totale du flux
 - Envoie des données PCM en sortie (format Pulse-code modulation)
 
-## Amélioration possible
+## Améliorations possibles
 - Ajout d'un mode aléatoire
 - Ajout d'une touche avance rapide / recul rapide
 - Changement de la touche pause/play
